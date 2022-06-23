@@ -6,6 +6,7 @@ import {
   Text,
   VStack
 } from '@chakra-ui/react'
+import { BetsContent } from './BetsContent'
 
 const NAV_LINKS = [
   {
@@ -89,7 +90,7 @@ export function BetsContainer() {
               <Image
                 src={el.image}
                 alt={el.name}
-                w={'32px'}
+                w={'24px'}
               />
               <Text>
                 {el.name}
@@ -100,10 +101,10 @@ export function BetsContainer() {
       </VStack>
       <Box
         flex={1}
-        bg={'gray.200'}
+        bg={'gray.300'}
         borderRadius={'lg'}
       >
-
+        <BetsContent />
       </Box>
       <VStack
         w='250px'

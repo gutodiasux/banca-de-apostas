@@ -7,6 +7,7 @@ import {
   InputLeftElement, Text
 } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import NextLink from 'next/link'
 import { RiSearchLine } from 'react-icons/ri'
 import { BetsContainer } from '../components/BetsContainer'
@@ -30,6 +31,9 @@ const DownNavLinks = [
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Banca de Apostas</title>
+      </Head>
       <WithSubnavigation />
       <Flex w='100%' p={4} justify={'space-between'}>
         <Box>
