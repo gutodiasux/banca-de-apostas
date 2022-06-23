@@ -21,10 +21,16 @@ import {
   useDisclosure
 } from '@chakra-ui/react'
 import { RegisterModal } from '../RegisterModal'
+import { RetrieveAccountModal } from '../RetrieveAccountModal'
 
 export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure()
   const createAccount = useDisclosure()
+  const retrieveAccount = useDisclosure()
+
+  const handleRetrieveAccount = () => {
+    retrieveAccount.onOpen()
+  }
 
   return (
     <>
@@ -115,6 +121,7 @@ export default function WithSubnavigation() {
                 fontSize={'sm'}
                 color={'gray.400'}
                 cursor={'pointer'}
+                onClick={handleRetrieveAccount}
               >
                 Esqueci a senha
               </Text>
@@ -129,6 +136,10 @@ export default function WithSubnavigation() {
       <RegisterModal
         isOpen={createAccount.isOpen}
         onClose={createAccount.onClose}
+      />
+      <RetrieveAccountModal
+        isOpen={retrieveAccount.isOpen}
+        onClose={retrieveAccount.onClose}
       />
     </>
   )
